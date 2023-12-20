@@ -11,7 +11,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final WebViewController = _webViewController;
+  late WebViewController _webViewController;
 
   @override
   void initState() {
@@ -54,6 +54,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: WebView(
         initialUrl: 'https://flutter.dev',
+        javascriptMode: JavascriptMode.unrestricted,
         onWebViewCreated: (controller) {
           _webViewController = controller;
         },
